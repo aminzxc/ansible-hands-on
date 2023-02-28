@@ -1,0 +1,10 @@
+---
+- name: Configure passwordless users
+  become: true
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^{{ item.username }}'
+    line: '{{ item.username }} ALL=(ALL) NOPASSWD:ALL'
+  with_items: "{{ passwordless_users }}"
+

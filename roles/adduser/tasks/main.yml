@@ -1,0 +1,13 @@
+---
+- name: Create new user
+  user:
+    name: "{{ item.name }}"
+    password: "{{ item.password }}"
+    groups: "{{ item.groups }}"
+    state: present
+    createhome: yes
+    shell: /bin/bash
+    expires: 1
+  with_items: "{{ user_details }}"
+  become: yes
+

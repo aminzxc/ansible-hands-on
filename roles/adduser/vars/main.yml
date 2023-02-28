@@ -1,0 +1,12 @@
+---
+user_details:
+  - name: "user1"
+    groups:
+      - "x"
+      - "y"
+    password: 1234
+  - name: "user2"
+    groups:
+      - "x"
+    password: 1234
+

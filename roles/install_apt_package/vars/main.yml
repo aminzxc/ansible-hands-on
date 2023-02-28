@@ -1,0 +1,8 @@
+---
+services:
+  - name: nginx
+    package: nginx
+    service: nginx
+  - name: mysql
+    package: mysql-server
+    service: mysql

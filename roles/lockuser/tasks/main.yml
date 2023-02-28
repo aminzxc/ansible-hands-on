@@ -1,0 +1,8 @@
+---
+- name: Lock user accounts and set shell to nologin
+    user:
+      name: "{{ item }}"
+      state: locked
+      shell: /usr/sbin/nologin
+    with_items: "{{ users_to_lock }}"
+    become: yes

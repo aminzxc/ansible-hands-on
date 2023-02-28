@@ -1,0 +1,14 @@
+---
+- name: Ensure packages are installed
+  apt:
+    name: "{{ item.package }}"
+    state: present
+  loop: "{{ services }}"
+  become: true
+
+- name: Ensure services are running
+  service:
+    name: "{{ item.service }}"
+    state: started
+  loop: "{{ services }}"
+  become: true
